@@ -7,7 +7,12 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "all": "git add . && git commit -m 'General Commit' && git push",
+    "r": "git add routes/ && git commit -m 'Routes Commit' && git push",
+    "c": "git add controllers/ && git commit -m 'Controllers Commit' && git push",
+    "m": "git add models/ && git commit -m 'Models Commit' && git push",
+    "s": "git add src/ && git commit -m 'Search Changes' && git push"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -15,6 +20,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@types/node": "^26.1.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
@@ -24,6 +30,6 @@
     "globals": "^15.9.0",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
+    "vite": "^8.1.3"
   }
 }

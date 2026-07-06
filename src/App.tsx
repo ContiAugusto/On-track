@@ -7,8 +7,9 @@ function App() {
       <div className="card">
         <FetchApi
           headers={{
-            Accept: 'application/json',
-            Authorization: import.meta.env.VITE_AUTHORIZATION,
+            'Content-Type': 'application/json',
+            accept: 'application/json',
+            authorization: import.meta.env.VITE_AUTHORIZATION,
           }}
         />
       </div>

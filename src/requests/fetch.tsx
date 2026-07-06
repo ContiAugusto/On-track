@@ -1,16 +1,15 @@
 import { useEffect, useState } from 'react'
 
 type FetchApiProps = {
-  baseRoute?: string
+  path?: string
   id?: number | null
   method?: string
   body?: unknown
   headers?: Record<string, string>
   params?: Record<string, string | number | boolean | null | undefined>
 }
-
 export function FetchApi({
-  baseRoute = 'https://www.bling.com.br/Api/v3/produtos?pagina=1&limite=100&criterio=1&tipo=T',
+  path = 'https://www.bling.com.br/Api/v3/produtos?pagina=1&limite=100&criterio=1&tipo=T',
   id = null,
   method = 'GET',
   body = null,
@@ -22,14 +21,12 @@ export function FetchApi({
   const [error, setError] = useState<Error | null>(null)
 
   useEffect(() => {
-    let isMounted = true
-
     async function fetchData() {
       setLoading(true)
       setError(null)
 
       try {
-        let url = id ? `${baseRoute}/${id}` : baseRoute
+        let url = id ? `${path}/${id}` : path
 
         const queryString = new URLSearchParams(
           Object.entries(params).reduce<Record<string, string>>(
@@ -48,7 +45,7 @@ export function FetchApi({
         }
 
         const response = await fetch(url, {
-          method,
+          method: method,
           headers: {
             ...headers,
           },
@@ -61,26 +58,17 @@ export function FetchApi({
 
         const result = await response.json()
 
-        if (isMounted) {
-          setData(result)
-        }
+        setData(result)
       } catch (err) {
-        if (isMounted) {
-          setError(err instanceof Error ? err : new Error(String(err)))
-        }
+        setError(err instanceof Error ? err : new Error(String(err)))
+        return
       } finally {
-        if (isMounted) {
-          setLoading(false)
-        }
+        setLoading(false)
       }
     }
 
-    void fetchData()
-
-    return () => {
-      isMounted = false
-    }
-  }, [baseRoute, id, method, body, headers, params])
+    fetchData()
+  }, [path, id, method, body, headers, params])
 
   return (
     <div>
@@ -89,7 +77,7 @@ export function FetchApi({
       {data !== null && (
         <div>
           <h1>Dados</h1>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
+          <pre>{JSON.stringify(data)}</pre>
         </div>
       )}
     </div>

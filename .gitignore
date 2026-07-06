@@ -11,9 +11,6 @@ node_modules
 dist
 dist-ssr
 *.local
-.env
-
-package.json
 
 # Editor directories and files
 .vscode/*
@@ -25,3 +22,5 @@ package.json
 *.njsproj
 *.sln
 *.sw?
+
+.env

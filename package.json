@@ -1,30 +1,43 @@
 {
+  "name": "ontrack",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "node app.js",
-    "all": "git add . && git commit -m 'Automatic Changes' && git push",
-    "r": "git add routes/ && git commit -m 'Automatic Changes' && git push",
-    "c": "git add controllers/ && git commit -m 'Automatic Changes' && git push",
-    "m": "git add models/ && git commit -m 'Automatic Changes' && git push"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "all": "git add . && git commit -m 'General Commit' && git push",
+    "r": "git add routes/ && git commit -m 'Routes Commit' && git push",
+    "c": "git add controllers/ && git commit -m 'Controllers Commit' && git push",
+    "m": "git add models/ && git commit -m 'Models Commit' && git push",
+    "s": "git add src/ && git commit -m 'Search Changes' && git push"
   },
   "dependencies": {
+    "axios": "^1.18.1",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "mongoose": "^9.6.3"
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.1"
   },
-  "name": "apicontatos---tapwm-08-05-2026",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SchiavoEnzo/ApiContatos---TAPWM-08-05-2026.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/SchiavoEnzo/ApiContatos---TAPWM-08-05-2026/issues"
-  },
-  "homepage": "https://github.com/SchiavoEnzo/ApiContatos---TAPWM-08-05-2026#readme"
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@eslint/js": "^10.0.1",
+    "@rolldown/plugin-babel": "^0.2.3",
+    "@types/babel__core": "^7.20.5",
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "eslint": "^10.6.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.7.0",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.62.0",
+    "vite": "^8.1.1"
+  }
 }

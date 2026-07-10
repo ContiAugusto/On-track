@@ -7,12 +7,11 @@ dotenv.config()
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), babel({ presets: [reactCompilerPreset()] })],
-  /*server: {
+  plugins: [react(), babel({ presets: [reactCompilerPreset()] })] /*
+  server: {
     proxy: {
       'api/produtos': {
-        target:
-          'https://www.bling.com.br/Api/v3/produtos?pagina=1&limite=1&criterio=1&tipo=T',
+        target: 'http://localhost:3000/api/produtos',
         changeOrigin: true,
         rewrite: (path) => path.replace('/api/produtos', ''),
         headers: {
@@ -21,5 +20,5 @@ export default defineConfig({
         },
       },
     },
-  },*/
+  },*/,
 })

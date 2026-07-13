@@ -11,8 +11,8 @@ function Callback() {
 
     if (code) {
       axios
-        .post(`${import.meta.env.VITE_API_URL}api/bling/token`, { code })
-        .catch((err) => console.error(err))
+        .post(`${import.meta.env.VITE_API_URL}bling/token`, { code })
+        .catch((err) => console.error(err.message))
     }
   }, [location])
 

@@ -12,12 +12,15 @@ export async function getAllProdutos() {
 }
 /*
 export async function getProduto() {
-  const axi = await axios.get(`${import.meta.env.VITE_API_URL}produtos`, {
-    headers: {
-      Authorization: import.meta.env.VITE_AUTHORIZATION,
+  const axi = await axios.get(
+    `${import.meta.env.VITE_API_URL}produtos:${req.params.id}`,
+    {
+      headers: {
+        Authorization: import.meta.env.VITE_AUTHORIZATION,
+      },
+      withCredentials: true,
     },
-    withCredentials: true,
-  })
+  )
 
   return axi.data
 }

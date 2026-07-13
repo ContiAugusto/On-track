@@ -4,7 +4,7 @@ function AuthBling() {
     const redirectUri = 'http://localhost:5173/callback'
     const scope = 'produto'
 
-    const authUrl = `https://www.bling.com.br/oauth/authorize?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scope}`
+    const authUrl = `https://www.bling.com.br/Api/v3/oauth/authorize?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scope}&state=${import.meta.env.VITE_STATE}`
 
     window.open(authUrl, 'BlingAuth', 'width=600,height=700')
   }

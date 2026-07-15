@@ -8,9 +8,9 @@ import './App.css'
 import AuthBling from './components/functions/auth'
 import Estoque from './pages/estoque'
 import Callback from './requests/callback'
-//import { useEffect } from 'react'
+/*//import { useEffect } from 'react'
 
-/*
+
 const Home = () => (
   <>
     <h6></h6>

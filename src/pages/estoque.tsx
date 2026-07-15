@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { getAllProdutos } from '../requests/produtos'
+import { getProdutos } from '../requests/produtos'
 
 function Estoque() {
   const [produtos, setProdutos] = useState({})
@@ -9,7 +9,7 @@ function Estoque() {
   const handleFetchProdutos = async () => {
     setLoading(true)
     try {
-      const data = await getAllProdutos().catch((err) => {
+      const data = await getProdutos(/*{}*/).catch((err) => {
         setError(err)
       })
       setProdutos(data)

@@ -7,8 +7,8 @@ dotenv.config()
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), babel({ presets: [reactCompilerPreset()] })] /*
-  server: {
+  plugins: [react(), babel({ presets: [reactCompilerPreset()] })] /*,
+  server: { //Utilizar isso depois
     proxy: {
       'api/produtos': {
         target: 'http://localhost:3000/api/produtos',
@@ -20,5 +20,5 @@ export default defineConfig({
         },
       },
     },
-  },*/,
+  }*/,
 })

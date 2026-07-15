@@ -8,11 +8,11 @@ function Callback() {
   useEffect(() => {
     const params = new URLSearchParams(location.search)
     const code = params.get('code')
-
     if (code) {
       axios
         .post(`${import.meta.env.VITE_API_URL}bling/token`, { code })
-        .catch((err) => console.error(err.message))
+        .then((res) => console.log(res))
+        .catch((err) => console.error(err.error))
     }
   }, [location])
 

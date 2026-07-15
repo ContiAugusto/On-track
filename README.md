@@ -1,77 +1,169 @@
-# React + TypeScript + Vite
+@@ -1,2 +1,163 @@
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# On-track
 
-Currently, two official plugins are available:
+On track solution created to help and make it easier to organize and track PCB boards
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# 🚀 OnTrack
 
-## React Compiler
+## 🇧🇷 Português
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### 📖 Sobre o Projeto
 
-Note: This will impact Vite dev & build performances.
+O **OnTrack** é uma plataforma desenvolvida para auxiliar a **[OnChip](https://onchip.com.br/?utm_source=chatgpt.com)** na gestão, rastreabilidade e organização dos processos envolvidos na fabricação de placas eletrônicas (PCB).
 
-## Expanding the ESLint configuration
+O sistema tem como objetivo centralizar informações críticas da produção, proporcionando maior controle sobre lotes, componentes, estoque, ordens de produção e pedidos de compra. Dessa forma, a empresa poderá reduzir erros operacionais, aumentar a eficiência dos processos e melhorar a tomada de decisões.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🎯 Objetivos
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+O OnTrack foi projetado para solucionar desafios comuns da indústria eletrônica, oferecendo:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Rastreabilidade completa dos lotes produzidos;
+- Controle dos componentes utilizados em cada placa;
+- Registro e acompanhamento de falhas e problemas identificados durante a produção;
+- Organização e gerenciamento de estoque;
+- Controle de ordens de produção;
+- Gerenciamento de pedidos de compra de componentes;
+- Auxílio na elaboração de orçamentos para placas PCB;
+- Centralização das informações produtivas em uma única plataforma.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### ⚙️ Funcionalidades
 
-```
+#### 📦 Gestão de Estoque
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Cadastro de componentes eletrônicos;
+- Controle de entrada e saída de materiais;
+- Monitoramento da disponibilidade de componentes;
+- Histórico de movimentações.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+#### 🔍 Rastreabilidade de Lotes
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Registro de lotes de produção;
+- Associação entre placas e componentes utilizados;
+- Consulta rápida do histórico produtivo;
+- Identificação de falhas e ocorrências.
 
-```
+#### 🏭 Ordens de Produção
+
+- Criação e gerenciamento de ordens de produção;
+- Acompanhamento do status de fabricação;
+- Organização das etapas produtivas.
+
+#### 🛒 Pedidos de Compra
+
+- Cadastro e acompanhamento de solicitações de compra;
+- Controle de componentes necessários para produção;
+- Apoio ao planejamento de reposição de estoque.
+
+#### 💰 Orçamento de PCBs
+
+- Estimativa de custos de produção;
+- Consulta de componentes necessários;
+- Suporte à tomada de decisões financeiras.
+
+### 🔗 Integrações
+
+O sistema contará com integração à **API do Bling**, permitindo sincronização e compartilhamento de informações relevantes para a gestão empresarial, estoque e processos administrativos.
+
+### 🌟 Benefícios Esperados
+
+- Maior controle dos processos produtivos;
+- Redução de erros operacionais;
+- Melhor organização do estoque;
+- Aumento da rastreabilidade dos produtos;
+- Agilidade na identificação de problemas;
+- Melhor gestão de compras;
+- Maior eficiência no planejamento da produção.
+
+---
+
+## 🇺🇸 English
+
+### 📖 About the Project
+
+**OnTrack** is a platform designed to support **OnChip** in managing, tracking, and organizing processes related to Printed Circuit Board (PCB) manufacturing.
+
+The system aims to centralize critical production information, providing greater visibility and control over batches, components, inventory, production orders, and purchase requests. This helps reduce operational errors, improve productivity, and support better decision-making.
+
+### 🎯 Objectives
+
+OnTrack was developed to address common challenges in electronics manufacturing by providing:
+
+- Complete production batch traceability;
+- Component tracking for each PCB;
+- Registration and monitoring of production issues and defects;
+- Inventory organization and management;
+- Production order management;
+- Component purchase order control;
+- Support for PCB cost estimation and budgeting;
+- Centralized production information.
+
+### ⚙️ Features
+
+#### 📦 Inventory Management
+
+- Electronic component registration;
+- Stock entry and withdrawal control;
+- Component availability monitoring;
+- Inventory movement history.
+
+#### 🔍 Batch Traceability
+
+- Production batch registration;
+- Association between PCBs and their components;
+- Quick access to production history;
+- Identification of defects and production issues.
+
+#### 🏭 Production Order Management
+
+- Creation and management of production orders;
+- Manufacturing status tracking;
+- Production workflow organization.
+
+#### 🛒 Purchase Order Management
+
+- Purchase request registration and tracking;
+- Component requirement management;
+- Inventory replenishment planning support.
+
+#### 💰 PCB Cost Estimation
+
+- Production cost estimation assistance;
+- Component requirement analysis;
+- Financial planning support.
+
+### 🔗 Integrations
+
+The system will integrate with the **Bling API**, enabling synchronization and sharing of relevant business, inventory, and administrative data.
+
+### 🌟 Expected Benefits
+
+- Improved production process control;
+- Reduced operational errors;
+- Better inventory organization;
+- Enhanced product traceability;
+- Faster issue identification and resolution;
+- Improved purchasing management;
+- Greater efficiency in production planning.
+
+---
+
+## 👥 Development Team
+
+- Augusto Conti
+- Eduardo Sim
+- Enzo Schiavo
+- Lucas Pio
+- Guilherme Wendell
+- Giovane Toccoli
+- João Victor Pitarelli
+
+## 📈 Project Status
+
+🚧 **In Development / Em Desenvolvimento**
+
+The project is currently in the analysis, design, and implementation stages.
+
+## 📄 License
+
+This project was developed for academic purposes and practical application in collaboration with OnChip.

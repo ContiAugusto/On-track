@@ -1,22 +1,22 @@
 import axios from 'axios'
 
-export async function getPedidosDeVenda() {
-  /*
-  idComponente: number,
-  dataInclusãoFinal: Date,
-  dataInclusãoInicial: Date,
-  dataAlteracaoFinal: Date,
-  dataAlteracaoInicial: Date,
-  idCategoria: number,
-  idLoja: number,
-  codigo: number,
-  nome: string,
-  idProd1: number,
-  idProd2: number,*/
+export async function getPedidosDeVenda(params: object | null = null) {
+  let formatedParams = '?'
+  if (params != null) {
+    const entries = Object.entries(params)
+    for (let i = 0; i < entries.length; i++) {
+      const [key, value] = entries[i]
+      if (i != entries.length - 1) {
+        formatedParams += `${key}=${value}&`
+      } else {
+        formatedParams += `${key}=${value}`
+      }
+    }
+  }
   try {
     //${idComponente && `idComponente=${idComponente}&`}${dataInclusãoFinal && `dataInclusãoFinal=${dataInclusãoFinal}&`}${dataInclusãoInicial && `dataInclusãoInicial=${dataInclusãoInicial}&`}${dataAlteracaoFinal && `dataAlteracaoFinal=${dataAlteracaoFinal}&`}${dataAlteracaoInicial && `dataAlteracaoInicial=${dataAlteracaoInicial}&`}${idCategoria && `idCategoria=${idCategoria}&`}${idLoja && `idLoja=${idLoja}&`}${codigo && `codigo=${codigo}&`}${nome && `nome=${nome}&`}${idProd1 && `idProd1=${idProd1}&`}${idProd2 && `idProd2=${idProd2}&`}
     const axi = await axios.get(
-      `${import.meta.env.VITE_API_URL}pedidoDeVenda`,
+      `${import.meta.env.VITE_API_URL}pedidoDeVenda${formatedParams}`,
       {
         headers: {
           Authorization: import.meta.env.VITE_AUTHORIZATION,

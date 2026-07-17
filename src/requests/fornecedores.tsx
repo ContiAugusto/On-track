@@ -8,7 +8,7 @@ export async function getProdFornecedores(
     //Tratar o id aqui por segurança
 
     const axi = await axios.delete(
-      `${import.meta.env.VITE_API_URL}produtos/fornecedores?idFornecedor=${idFor}${idProd && `&idProduto=${idProd}`}`,
+      `${import.meta.env.VITE_API_URL}produtos/fornecedores?${idFor && `idFornecedor=${idFor}`}${idProd && `&idProduto=${idProd}`}`,
       {
         headers: {
           Authorization: import.meta.env.VITE_AUTHORIZATION,

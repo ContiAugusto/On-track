@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { getProdutos } from '../requests/produtos'
 
+//Modelo teste frontEnd
+
 function Estoque() {
-  const [produtos, setProdutos] = useState('')
+  const [produtos, setProdutos] = useState({})
   const [loading, setLoading] = useState(false)
 
   const handleFetchProdutos = async () => {

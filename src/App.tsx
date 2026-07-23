@@ -4,10 +4,10 @@ import {
   Routes,
   //useNavigate,
 } from 'react-router-dom'
-import './App.css'
 import { AuthBling /*Redirect*/ } from './components/functions/auth'
 import Estoque from './pages/estoque'
 import Callback from './requests/callback'
+import Home from './pages'
 /*//import { useEffect } from 'react'
 
 
@@ -54,8 +54,8 @@ function App() {
         <Router>
           <Routes>
             {/*<Route path="/redirect" element={<Redirect />} />*/}
-            <Route path='/callback' element={<Callback />} />
-            <Route path='/' element={<div>Bem-vindo ao Dashboard!</div>} />
+            <Route path="/callback" element={<Callback />} />
+            <Route path="/" element={<Home />} />
           </Routes>
         </Router>
       </div>

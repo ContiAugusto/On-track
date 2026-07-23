@@ -16,6 +16,7 @@ export function AuthBling() {
       const redirectUri = 'http://localhost:3000/callback'
       const scope = 'produto'
 
+      //state tem que pegar o nonce
       const authUrl = `https://www.bling.com.br/Api/v3/oauth/authorize?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scope}&state=${secret.data.state}`
 
       window.open(authUrl, 'BlingAuth', 'width=600,height=700')

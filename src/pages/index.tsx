@@ -1,17 +1,15 @@
-import { useEffect, useState } from 'react'
 //import axios from 'axios'
 
-function Home() {
-  const [homie] = useState('')
-  useEffect(() => {
-    try {
-      //axios.get('/').then((resp) => setHomie(resp.data))
-    } catch (err) {
-      console.error(err)
-    }
-  }, [])
+import { Login } from '../components/functions/auth'
+import Estoque from './estoque'
 
-  return <>{homie}</>
+function Home() {
+  return (
+    <>
+      <Estoque />
+      <Login />
+    </>
+  )
 }
 
 export default Home

@@ -15,13 +15,7 @@ export async function getProdutos(params: object | null = null) {
   }
   try {
     const axi = await axios.get(
-      `${import.meta.env.VITE_API_URL}produtos${formatedParams}`,
-      {
-        headers: {
-          Authorization: import.meta.env.VITE_AUTHORIZATION,
-        },
-        withCredentials: true,
-      },
+      `http://localhost:3000/api/produtos${formatedParams}`,
     )
 
     return axi.data
@@ -31,17 +25,8 @@ export async function getProdutos(params: object | null = null) {
 }
 
 export async function getProduto(id: number) {
-  //Tratar o id aqui por segurança
   try {
-    const axi = await axios.get(
-      `${import.meta.env.VITE_API_URL}produtos/:${id}`,
-      {
-        headers: {
-          Authorization: import.meta.env.VITE_AUTHORIZATION,
-        },
-        withCredentials: true,
-      },
-    )
+    const axi = await axios.get(`http://localhost:3000/api/produtos/:${id}`)
 
     return axi.data
   } catch (err) {
@@ -51,14 +36,8 @@ export async function getProduto(id: number) {
 
 export async function postProduto(data: object) {
   try {
-    //Tratar a data aqui por segurança
-
-    const axi = await axios.post(`${import.meta.env.VITE_API_URL}produtos`, {
-      headers: {
-        Authorization: import.meta.env.VITE_AUTHORIZATION,
-      },
+    const axi = await axios.post(`http://localhost:3000/api/produtos`, {
       body: data,
-      withCredentials: true,
     })
 
     return axi.data
@@ -69,18 +48,9 @@ export async function postProduto(data: object) {
 
 export async function putProduto(id: number, data: object) {
   try {
-    //Tratar a data aqui por segurança
-
-    const axi = await axios.put(
-      `${import.meta.env.VITE_API_URL}produtos/:${id}`,
-      {
-        headers: {
-          Authorization: import.meta.env.VITE_AUTHORIZATION,
-        },
-        body: data,
-        withCredentials: true,
-      },
-    )
+    const axi = await axios.put(`http://localhost:3000/api/produtos/:${id}`, {
+      body: data,
+    })
 
     return axi.data
   } catch (err) {
@@ -90,17 +60,7 @@ export async function putProduto(id: number, data: object) {
 
 export async function deleteProduto(id: number) {
   try {
-    //Tratar o id aqui por segurança
-
-    const axi = await axios.delete(
-      `${import.meta.env.VITE_API_URL}produtos/:${id}`,
-      {
-        headers: {
-          Authorization: import.meta.env.VITE_AUTHORIZATION,
-        },
-        withCredentials: true,
-      },
-    )
+    const axi = await axios.delete(`http://localhost:3000/api/produtos/:${id}`)
 
     return axi.data
   } catch (err) {

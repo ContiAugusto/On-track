@@ -2,16 +2,12 @@ import axios from 'axios'
 import { useState } from 'react'
 
 export function Login() {
-  ///Depois add segurança
   const [loading, setLoading] = useState(false)
 
   const getAuth = async () => {
-    //Depois add segurança
     setLoading(true)
     try {
-      const client = await axios.get(
-        `http://localhost:3000/api/callback/token/35$%UkYmKBRj6j5X$XEZN@Tgm`,
-      )
+      const client = await axios.get(`http://localhost:3000/api/callback/token`)
       const clientId = client.data.auth
       const redirectUri = `http://localhost:3000/api/callback`
       const scope = 'produto'

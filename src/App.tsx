@@ -9,7 +9,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/app/callback" element={<Callback />} />
-            <Route path="/app/" element={<Home />} />
+            <Route path="/" element={<Home />} />
           </Routes>
         </Router>
       </div>

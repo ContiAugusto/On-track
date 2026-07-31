@@ -8,8 +8,8 @@ function App() {
       <div>
         <Router>
           <Routes>
-            <Route path="/callback" element={<Callback />} />
-            <Route path="/" element={<Home />} />
+            <Route path="/app/callback" element={<Callback />} />
+            <Route path="/app/" element={<Home />} />
           </Routes>
         </Router>
       </div>

@@ -15,7 +15,7 @@ export async function getPedidosDeCompra(params: object | null = null) {
   }
   try {
     const axi = await axios.get(
-      `http://localhost:3000/api/pedidos/compras${formatedParams}`,
+      `${import.meta.env.VITE_URL}pedidos/compras${formatedParams}`,
     )
 
     return axi.data
@@ -29,7 +29,7 @@ export async function getPedidoDeCompra(id: number) {
 
   try {
     const axi = await axios.get(
-      `http://localhost:3000/api/pedidos/compras/:${id}`,
+      `${import.meta.env.VITE_URL}pedidos/compras/:${id}`,
     )
 
     return axi.data
@@ -42,7 +42,7 @@ export async function postPedidoDeCompra(data: object) {
   try {
     //Tratar a data aqui por segurança
 
-    const axi = await axios.post(`http://localhost:3000/api/pedidos/compras`, {
+    const axi = await axios.post(`${import.meta.env.VITE_URL}pedidos/compras`, {
       body: data,
     })
 
@@ -57,7 +57,7 @@ export async function putPedidoDeCompra(id: number, data: object) {
     //Tratar a data aqui por segurança
 
     const axi = await axios.put(
-      `http://localhost:3000/api/pedidos/compras/:${id}`,
+      `${import.meta.env.VITE_URL}pedidos/compras/:${id}`,
       {
         body: data,
       },
@@ -74,7 +74,7 @@ export async function deletePedidoDeCompra(id: number) {
     //Tratar o id aqui por segurança
 
     const axi = await axios.delete(
-      `http://localhost:3000/api/pedidos/compras/:${id}`,
+      `${import.meta.env.VITE_URL}pedidos/compras/:${id}`,
     )
 
     return axi.data

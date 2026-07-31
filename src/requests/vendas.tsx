@@ -16,7 +16,7 @@ export async function getPedidosDeVenda(params: object | null = null) {
   try {
     //${idComponente && `idComponente=${idComponente}&`}${dataInclusãoFinal && `dataInclusãoFinal=${dataInclusãoFinal}&`}${dataInclusãoInicial && `dataInclusãoInicial=${dataInclusãoInicial}&`}${dataAlteracaoFinal && `dataAlteracaoFinal=${dataAlteracaoFinal}&`}${dataAlteracaoInicial && `dataAlteracaoInicial=${dataAlteracaoInicial}&`}${idCategoria && `idCategoria=${idCategoria}&`}${idLoja && `idLoja=${idLoja}&`}${codigo && `codigo=${codigo}&`}${nome && `nome=${nome}&`}${idProd1 && `idProd1=${idProd1}&`}${idProd2 && `idProd2=${idProd2}&`}
     const axi = await axios.get(
-      `http://localhost:3000/api/pedidos/vendas${formatedParams}`,
+      `${import.meta.env.VITE_URL}pedidos/vendas${formatedParams}`,
     )
 
     return axi.data
@@ -28,7 +28,7 @@ export async function getPedidosDeVenda(params: object | null = null) {
 export async function getPedidoDeVenda(id: number) {
   try {
     const axi = await axios.get(
-      `http://localhost:3000/api/pedidos/vendas/:${id}`,
+      `${import.meta.env.VITE_URL}pedidos/vendas/:${id}`,
     )
 
     return axi.data
@@ -39,7 +39,7 @@ export async function getPedidoDeVenda(id: number) {
 
 export async function postPedidoDeVenda(data: object) {
   try {
-    const axi = await axios.post(`http://localhost:3000/api/pedidos/vendas`, {
+    const axi = await axios.post(`${import.meta.env.VITE_URL}pedidos/vendas`, {
       body: data,
     })
 
@@ -52,7 +52,7 @@ export async function postPedidoDeVenda(data: object) {
 export async function putPedidoDeVenda(id: number, data: object) {
   try {
     const axi = await axios.put(
-      `http://localhost:3000/api/pedidos/vendas/:${id}`,
+      `${import.meta.env.VITE_URL}pedidos/vendas/:${id}`,
       {
         body: data,
       },
@@ -67,7 +67,7 @@ export async function putPedidoDeVenda(id: number, data: object) {
 export async function deletePedidoDeVenda(id: number) {
   try {
     const axi = await axios.delete(
-      `http://localhost:3000/api/pedidos/vendas/:${id}`,
+      `${import.meta.env.VITE_URL}pedidos/vendas/:${id}`,
     )
 
     return axi.data

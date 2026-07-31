@@ -15,7 +15,7 @@ export async function getProdutos(params: object | null = null) {
   }
   try {
     const axi = await axios.get(
-      `http://localhost:3000/api/produtos${formatedParams}`,
+      `${import.meta.env.VITE_URL}produtos${formatedParams}`,
     )
 
     return axi.data
@@ -26,7 +26,7 @@ export async function getProdutos(params: object | null = null) {
 
 export async function getProduto(id: number) {
   try {
-    const axi = await axios.get(`http://localhost:3000/api/produtos/:${id}`)
+    const axi = await axios.get(`${import.meta.env.VITE_URL}produtos/:${id}`)
 
     return axi.data
   } catch (err) {
@@ -36,7 +36,7 @@ export async function getProduto(id: number) {
 
 export async function postProduto(data: object) {
   try {
-    const axi = await axios.post(`http://localhost:3000/api/produtos`, {
+    const axi = await axios.post(`${import.meta.env.VITE_URL}produtos`, {
       body: data,
     })
 
@@ -48,7 +48,7 @@ export async function postProduto(data: object) {
 
 export async function putProduto(id: number, data: object) {
   try {
-    const axi = await axios.put(`http://localhost:3000/api/produtos/:${id}`, {
+    const axi = await axios.put(`${import.meta.env.VITE_URL}produtos/:${id}`, {
       body: data,
     })
 
@@ -60,7 +60,7 @@ export async function putProduto(id: number, data: object) {
 
 export async function deleteProduto(id: number) {
   try {
-    const axi = await axios.delete(`http://localhost:3000/api/produtos/:${id}`)
+    const axi = await axios.delete(`${import.meta.env.VITE_URL}produtos/:${id}`)
 
     return axi.data
   } catch (err) {

@@ -6,7 +6,7 @@ export async function getProdFornecedores(
 ) {
   try {
     const axi = await axios.delete(
-      `http://localhost:3000/api/produtos/fornecedores?${idFor && `idFornecedor=${idFor}`}${idProd && `&idProduto=${idProd}`}`,
+      `${import.meta.env.VITE_URL}produtos/fornecedores?${idFor && `idFornecedor=${idFor}`}${idProd && `&idProduto=${idProd}`}`,
     )
 
     return axi.data
@@ -18,7 +18,7 @@ export async function getProdFornecedores(
 export async function getProdFornecedor(idFor: number) {
   try {
     const axi = await axios.delete(
-      `http://localhost:3000/api/produtos/fornecedores/:${idFor}`,
+      `${import.meta.env.VITE_URL}produtos/fornecedores/:${idFor}`,
     )
 
     return axi.data

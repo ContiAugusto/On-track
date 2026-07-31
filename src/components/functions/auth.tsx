@@ -7,9 +7,11 @@ export function Login() {
   const getAuth = async () => {
     setLoading(true)
     try {
-      const client = await axios.get(`http://localhost:3000/api/callback/token`)
+      const client = await axios.get(
+        `${import.meta.env.VITE_URL}callback/token`,
+      )
       const clientId = client.data.auth
-      const redirectUri = `http://localhost:3000/api/callback`
+      const redirectUri = `${import.meta.env.VITE_URL}callback`
       const scope = 'produto'
 
       //state = nonce

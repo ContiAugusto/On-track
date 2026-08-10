@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+// Referência da API Bling: https://developer.bling.com.br/referencia
+
 export async function getPedidosDeCompra(params: object | null = null) {
   let formatedParams = '?'
   if (params != null) {

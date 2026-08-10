@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+// Referência da API Bling: https://developer.bling.com.br/referencia
+
 export async function getProdutos(params: object | null = null) {
   let formatedParams = '?'
   if (params != null) {
@@ -51,16 +53,6 @@ export async function putProduto(id: number, data: object) {
     const axi = await axios.put(`${import.meta.env.VITE_URL}produtos/:${id}`, {
       body: data,
     })
-
-    return axi.data
-  } catch (err) {
-    return err
-  }
-}
-
-export async function deleteProduto(id: number) {
-  try {
-    const axi = await axios.delete(`${import.meta.env.VITE_URL}produtos/:${id}`)
 
     return axi.data
   } catch (err) {

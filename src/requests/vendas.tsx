@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+// Referência da API Bling: https://developer.bling.com.br/referencia
+
 export async function getPedidosDeVenda(params: object | null = null) {
   let formatedParams = '?'
   if (params != null) {
@@ -14,7 +16,18 @@ export async function getPedidosDeVenda(params: object | null = null) {
     }
   }
   try {
-    //${idComponente && `idComponente=${idComponente}&`}${dataInclusãoFinal && `dataInclusãoFinal=${dataInclusãoFinal}&`}${dataInclusãoInicial && `dataInclusãoInicial=${dataInclusãoInicial}&`}${dataAlteracaoFinal && `dataAlteracaoFinal=${dataAlteracaoFinal}&`}${dataAlteracaoInicial && `dataAlteracaoInicial=${dataAlteracaoInicial}&`}${idCategoria && `idCategoria=${idCategoria}&`}${idLoja && `idLoja=${idLoja}&`}${codigo && `codigo=${codigo}&`}${nome && `nome=${nome}&`}${idProd1 && `idProd1=${idProd1}&`}${idProd2 && `idProd2=${idProd2}&`}
+    // idComponente
+    // dataInclusãoFinal
+    // dataInclusãoInicial
+    // dataAlteracaoFinal
+    // dataAlteracaoInicial
+    // idCategoria
+    // idLoja
+    // codigo
+    // nome
+    // idProd1
+    // idProd2
+
     const axi = await axios.get(
       `${import.meta.env.VITE_URL}pedidos/vendas${formatedParams}`,
     )
@@ -49,25 +62,10 @@ export async function postPedidoDeVenda(data: object) {
   }
 }
 
-export async function putPedidoDeVenda(id: number, data: object) {
+export async function postEstoqueVenda(idVenda: number, idDeposito: number) {
   try {
-    const axi = await axios.put(
-      `${import.meta.env.VITE_URL}pedidos/vendas/:${id}`,
-      {
-        body: data,
-      },
-    )
-
-    return axi.data
-  } catch (err) {
-    return err
-  }
-}
-
-export async function deletePedidoDeVenda(id: number) {
-  try {
-    const axi = await axios.delete(
-      `${import.meta.env.VITE_URL}pedidos/vendas/:${id}`,
+    const axi = await axios.post(
+      `${import.meta.env.VITE_URL}pedidos/vendas?id_venda=${idVenda}&id_deposito=${idDeposito}`,
     )
 
     return axi.data

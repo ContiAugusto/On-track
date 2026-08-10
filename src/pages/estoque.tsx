@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { getProdutos } from '../requests/produtos'
+import { getProduto } from '../requests/produtos'
 
 //Modelo teste frontEnd
 
@@ -10,7 +10,7 @@ function Estoque() {
   const handleFetchProdutos = async () => {
     setLoading(true)
     try {
-      const data = await getProdutos()
+      const data = await getProduto(16684755958) // Exemplo: buscar produto com ID 1
       setProdutos(data)
     } finally {
       setLoading(false)

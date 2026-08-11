@@ -71,14 +71,14 @@ export async function putPedidoDeCompra(id: number, data: object) {
   }
 }
 
-export async function deletePedidoDeCompra(id: number) {
+export async function patchSituacaoPedidoDeCompra(
+  id: number,
+  idSituacao: number,
+) {
   try {
-    //Tratar o id aqui por segurança
-
-    const axi = await axios.delete(
-      `${import.meta.env.VITE_URL}pedidos/compras/:${id}`,
+    const axi = await axios.patch(
+      `${import.meta.env.VITE_URL}pedidos/compras?id=${id}&idSituacao=${idSituacao}`,
     )
-
     return axi.data
   } catch (err) {
     return err

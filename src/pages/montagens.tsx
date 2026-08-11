@@ -1,16 +1,18 @@
 import { useState } from 'react'
-import { getProdutos } from '../requests/produtos'
+import { postMontagens } from '../requests/montagens'
 
 //Modelo teste frontEnd
 
-function Estoque() {
+function Montagem() {
   const [produtos, setProdutos] = useState({})
   const [loading, setLoading] = useState(false)
 
   const handleFetchProdutos = async () => {
     setLoading(true)
     try {
-      const data = await getProdutos()
+      const data = await postMontagens({
+        teste: 'teste',
+      })
       setProdutos(data)
     } finally {
       setLoading(false)
@@ -21,7 +23,7 @@ function Estoque() {
     <>
       <div>
         <button onClick={handleFetchProdutos} disabled={loading}>
-          {loading ? 'Carregando...' : 'Criar estoque'}
+          {loading ? 'Carregando...' : 'Criar montagem'}
         </button>
         {Object.keys(produtos) && <pre>{JSON.stringify(produtos)}</pre>}
       </div>
@@ -29,4 +31,4 @@ function Estoque() {
   )
 }
 
-export default Estoque
+export default Montagem
